@@ -64,3 +64,10 @@ const ll = console.log;
   const [name, tel, gender] = arr;
   ll(name, tel, gender);
 }
+
+// Object 항목 변수로 할당
+{
+  const data = { id: 1, name: 'park', age: 21 };
+  const { id, name, age } = data;
+  ll(id, name, age);
+}
