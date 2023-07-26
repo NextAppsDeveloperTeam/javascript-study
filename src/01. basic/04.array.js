@@ -3,16 +3,24 @@ const ll = console.log;
 // TODO: 배열 앞에 7 추가 [7, 3, 6, 2, 1, 4, 5]
 {
   const arr = [3, 6, 2, 1, 4, 5];
+  arr.unshift(7);
+
+  ll(arr);
 }
 
 // TODO: 배열 뒤에 7 추가 [3, 6, 2, 1, 4, 5, 7]
 {
   const arr = [3, 6, 2, 1, 4, 5];
+  arr.push(7);
+
+  ll(arr);
 }
 
 // TODO: "1-2-3-4-5-6" 문자열 변환
 {
   const arr = [3, 6, 2, 1, 4, 5];
+
+  ll(arr.join('-'));
 }
 
 // TODO: Array.sort 이용하여 최대값, 최소값 찾기
