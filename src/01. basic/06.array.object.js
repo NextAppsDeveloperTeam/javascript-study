@@ -143,7 +143,7 @@ const data = [
 // !!! Array.filter 사용
 {
   for (let key in data) {
-    if (data[key].url.includes('https')) {
+    if (data[key].url.startsWith('https')) {
       ll(data[key]);
     }
   }
