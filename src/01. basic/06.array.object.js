@@ -126,7 +126,7 @@ const data = [
 // TODO: url 이 'https' 로 시작하는 항목 찾기
 {
   for (let key in data) {
-    if (data[key].url.includes('https')) {
+    if (data[key].url.startsWith('https')) {
       ll(data[key]);
     }
   }
