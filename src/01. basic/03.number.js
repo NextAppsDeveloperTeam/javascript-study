@@ -66,5 +66,5 @@ const ll = console.log;
   const perPage = 20; // 한페이지당 노출 수
   const total = 183; // 전체 개수
 
-  ll(perPage * total);
+  ll(Math.ceil(total / perPage));
 }
