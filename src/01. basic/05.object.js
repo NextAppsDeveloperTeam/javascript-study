@@ -39,11 +39,6 @@ const ll = console.log;
 // !!! (2) Object.values, Array.reduce 함수를 사용하여 한번에 처리
 {
   const obj = { n1: 323, n2: 553, n3: 234, n4: 553, n5: 952 };
-  let sum = 0;
-
   // !!! key 값은 변경되지 않는 값이기 떄문에 const 로 변경해야함
-  for (let key in obj) {
-    sum += obj[key];
-  }
-  ll(sum);
+  ll(Object.values(obj).reduce((a, b) => a + b));
 }

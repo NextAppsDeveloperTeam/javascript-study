@@ -40,53 +40,45 @@ const data = [
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  for (let key in data) {
-    if (data[key].id % 2 === 0) {
-      ll(data[key]);
-    }
-  }
+  const arr = data.filter((key) => key.id % 2 === 0);
+
+  ll(arr);
 }
 
 // TODO: 성별이 여성인 항목만 찾기
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  for (let key in data) {
-    if (data[key].gender === 'f') {
-      ll(data[key]);
-    }
-  }
+  const arr = data.filter((key) => key.gender === 'f');
+
+  ll(arr);
 }
 
 // TODO: 나이의 합계 계산
 // !!! Array.reduce 사용
 {
-  let sum = 0;
-  for (let key in data) {
-    sum += data[key].age;
-  }
+  const sum = data.reduce((a, b) => a.age + b.age);
+
   ll(sum);
 }
 
 // TODO: 평균 나이 계산
 // !!! Array.reduce 사용
 {
-  let sum = 0;
-  for (let key in data) {
-    sum += data[key].age;
-  }
+  const sum = data.reduce((a, b) => a.age + b.age);
+
   ll(sum / data.length);
 }
 
 // TODO: 여성의 나이의 합계 계산
 // !!! Array.reduce 사용
 {
-  let sum = 0;
-  for (let key in data) {
-    if (data[key].gender === 'f') {
-      sum += data[key].age;
+  const sum = data.reduce((a, b) => {
+    if (data.gender === 'f') {
+      a.age + b.age;
     }
-  }
+  });
+
   ll(sum);
 }
 
@@ -94,65 +86,51 @@ const data = [
 // !!! Object 를 출력해야함
 // !!! Array.reduce 사용
 {
-  let minAge = data[0].age;
-  for (let key in data) {
-    if (minAge > data[key].age) {
-      minAge = data[key].age;
-    }
-  }
-  ll(minAge);
+  const min = data.reduce((num) => Math.min(data.age));
+
+  ll(min);
 }
 
 // TODO: 나이가 가장 많은 사람 찾기
 // !!! Object 를 출력해야함
 // !!! Array.reduce 사용
 {
-  let maxAge = data[0].age;
-  for (let key in data) {
-    if (maxAge < data[key].age) {
-      maxAge = data[key].age;
-    }
-  }
-  ll(maxAge);
+  const max = data.reduce((num) => Math.max(data.age));
+
+  ll(max);
 }
 
 // TODO: 나이가 10대 이거나 20대인 사람 찾기
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  for (let key in data) {
-    if (data[key].age >= 10 && data[key].age < 30) {
-      ll(data[key]);
-    }
-  }
+  const arr = data.filter((key) => key.age >= 10 && key.age < 30);
+
+  ll(arr);
 }
 
 // TODO: 나이가 10대 이면서 남성인 사람 찾기
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  for (let key in data) {
-    if (data[key].age >= 10 && data[key].age < 20 && data[key].gender === 'm') {
-      ll(data[key]);
-    }
-  }
+  const arr = data.filter((key) => key.age >= 10 && key.age < 20 && key.gender === 'm');
+
+  ll(arr);
 }
 
 // TODO: url 이 'https' 로 시작하는 항목 찾기
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  for (let key in data) {
-    if (data[key].url.startsWith('https')) {
-      ll(data[key]);
-    }
-  }
+  const arr = data.filter((key) => key.url.includes('https'));
+
+  ll(arr);
 }
 
 // TODO: name 값만 array 로 추출 ['park', 'kim', 'lee', 'yun']
 // !!! Object.keys 사용할 필요 없음 Array.map 만 사용
 {
-  const arr = Object.keys(data).map((key) => data[key].name);
+  const arr = data.map((key) => key.name);
 
   ll(arr);
 }
@@ -160,11 +138,11 @@ const data = [
 // TODO: 다음과 같이 array 추출 ['park (남)', 'kim (남)', 'lee (여)', 'yun (여)']
 // !!! Object.keys 사용할 필요 없음 Array.map 만 사용
 {
-  const arr = Object.keys(data).map((key) => {
-    if (data[key].gender === 'm') {
-      return `${data[key].name} (남)`;
-    } else if (data[key].gender === 'f') {
-      return `${data[key].name} (여)`;
+  const arr = data.map((key) => {
+    if (key.gender === 'm') {
+      return `${key.name} (남)`;
+    } else if (key.gender === 'f') {
+      return `${key.name} (여)`;
     }
   });
 

@@ -40,21 +40,19 @@ const ll = console.log;
   // const arr = [3, 6, 2, 1, 4, 5];
   const arr = [300, 200, 100, 400, 500, 100];
 
+  let sum = 0;
   let maxNum = arr[0];
   let minNum = arr[0];
 
   // !!! i 값은 변경되지 않는 값이기 떄문에 const 로 변경해야함
-  for (let i of arr) {
+  for (const i of arr) {
+    sum += i;
     // !!! Math.min 함수 사용하여 한줄로 처리
-    if (arr[i] < minNum) {
-      minNum = arr[i];
-    }
+    minNum = Math.min(...arr);
     // !!! Math.max 함수 사용하여 한줄로 처리
-    if (arr[i] > maxNum) {
-      maxNum = arr[i];
-    }
+    maxNum = Math.max(...arr);
   }
-  ll(minNum, maxNum);
+  ll(sum, minNum, maxNum);
 }
 
 // Array.forEach 이용하여 합계 계산
@@ -75,13 +73,9 @@ const ll = console.log;
   let minNum = arr[0];
   arr.forEach((num) => {
     // !!! Math.min 함수 사용하여 한줄로 처리
-    if (num < minNum) {
-      minNum = num;
-    }
+    minNum = Math.min(...arr);
     // !!! Math.max 함수 사용하여 한줄로 처리
-    if (num > maxNum) {
-      maxNum = num;
-    }
+    maxNum = Math.max(...arr);
   });
   ll(minNum, maxNum);
 }
@@ -122,9 +116,9 @@ const ll = console.log;
 {
   const arr = [3, 6, 2, 1, 4, 5];
   // !!! Math.min 함수 사용
-  const min = arr.reduce((a, b) => (a < b ? a : b));
+  const min = arr.reduce((a, b) => Math.min(a, b));
   // !!! Math.max 함수 사용
-  const max = arr.reduce((a, b) => (a > b ? a : b));
+  const max = arr.reduce((a, b) => Math.max(a, b));
 
   ll(min, max);
 }
