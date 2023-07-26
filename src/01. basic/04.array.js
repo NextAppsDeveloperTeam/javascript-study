@@ -34,8 +34,6 @@ const ll = console.log;
 // }
 
 // TODO: for/of 이용하여 합계, 최대값, 최소값 찾기
-// !!! 합계 값도 구해야 함
-// !!! 배열값 변경했을때 최대, 최소값 맞지 않음
 {
   // const arr = [3, 6, 2, 1, 4, 5];
   const arr = [300, 200, 100, 400, 500, 100];
@@ -44,13 +42,10 @@ const ll = console.log;
   let maxNum = arr[0];
   let minNum = arr[0];
 
-  // !!! i 값은 변경되지 않는 값이기 떄문에 const 로 변경해야함
   for (const i of arr) {
     sum += i;
-    // !!! Math.min 함수 사용하여 한줄로 처리
-    minNum = Math.min(...arr);
-    // !!! Math.max 함수 사용하여 한줄로 처리
-    maxNum = Math.max(...arr);
+    minNum = Math.min(...arr); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    maxNum = Math.max(...arr); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
   }
   ll(sum, minNum, maxNum);
 }
@@ -72,10 +67,8 @@ const ll = console.log;
   let maxNum = arr[0];
   let minNum = arr[0];
   arr.forEach((num) => {
-    // !!! Math.min 함수 사용하여 한줄로 처리
-    minNum = Math.min(...arr);
-    // !!! Math.max 함수 사용하여 한줄로 처리
-    maxNum = Math.max(...arr);
+    minNum = Math.min(...arr); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    maxNum = Math.max(...arr); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
   });
   ll(minNum, maxNum);
 }
@@ -112,16 +105,14 @@ const ll = console.log;
 //   ll(sum);
 // }
 
-// TODO: Array.reduce 이용하여 최소값, 최대값 찾기
-{
-  const arr = [3, 6, 2, 1, 4, 5];
-  // !!! Math.min 함수 사용
-  const min = arr.reduce((a, b) => Math.min(a, b));
-  // !!! Math.max 함수 사용
-  const max = arr.reduce((a, b) => Math.max(a, b));
-
-  ll(min, max);
-}
+// Array.reduce 이용하여 최소값, 최대값 찾기
+// {
+//   const arr = [3, 6, 2, 1, 4, 5];
+//   const min = arr.reduce((a, b) => Math.min(a, b));
+//   const max = arr.reduce((a, b) => Math.max(a, b));
+//
+//   ll(min, max);
+// }
 
 // // Spread Operator(...) 이용하여 두 배열을 하나로 합침. [3, 6, 2, 1, 4, 5]
 // {

@@ -36,23 +36,19 @@ const data = [
   },
 ];
 
-// TODO: id 값이 짝수인 항묵만 찾기
-// !!! Object 배열을 출력해야함
-// !!! Array.filter 사용
-{
-  const arr = data.filter((key) => key.id % 2 === 0);
+// id 값이 짝수인 항묵만 찾기
+// {
+//   const arr = data.filter((key) => key.id % 2 === 0);
+//
+//   ll(arr);
+// }
 
-  ll(arr);
-}
-
-// TODO: 성별이 여성인 항목만 찾기
-// !!! Object 배열을 출력해야함
-// !!! Array.filter 사용
-{
-  const arr = data.filter((key) => key.gender === 'f');
-
-  ll(arr);
-}
+// 성별이 여성인 항목만 찾기
+// {
+//   const arr = data.filter((key) => key.gender === 'f');
+//
+//   ll(arr);
+// }
 
 // TODO: 나이의 합계 계산
 // !!! Array.reduce 사용
