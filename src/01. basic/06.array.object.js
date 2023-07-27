@@ -53,7 +53,7 @@ const data = [
 // TODO: 나이의 합계 계산
 // !!! Array.reduce 사용
 {
-  const sum = data.reduce((a, b) => a.age + b.age);
+  const sum = data.reduce((a, b) => a + b.age, 0);
 
   ll(sum);
 }
@@ -61,7 +61,7 @@ const data = [
 // TODO: 평균 나이 계산
 // !!! Array.reduce 사용
 {
-  const sum = data.reduce((a, b) => a.age + b.age);
+  const sum = data.reduce((a, b) => a + b.age, 0);
 
   ll(sum / data.length);
 }
@@ -69,11 +69,7 @@ const data = [
 // TODO: 여성의 나이의 합계 계산
 // !!! Array.reduce 사용
 {
-  const sum = data.reduce((a, b) => {
-    if (data.gender === 'f') {
-      a.age + b.age;
-    }
-  });
+  const sum = data.filter((key) => key.gender === 'f').reduce((a, b) => a + b.age, 0);
 
   ll(sum);
 }
@@ -82,7 +78,7 @@ const data = [
 // !!! Object 를 출력해야함
 // !!! Array.reduce 사용
 {
-  const min = data.reduce((num) => Math.min(data.age));
+  const min = data.reduce((prev, cur) => (prev > cur ? prev : cur));
 
   ll(min);
 }
@@ -91,7 +87,7 @@ const data = [
 // !!! Object 를 출력해야함
 // !!! Array.reduce 사용
 {
-  const max = data.reduce((num) => Math.max(data.age));
+  const max = data.reduce((prev, cur) => (prev > cur ? cur : prev));
 
   ll(max);
 }
@@ -118,7 +114,7 @@ const data = [
 // !!! Object 배열을 출력해야함
 // !!! Array.filter 사용
 {
-  const arr = data.filter((key) => key.url.includes('https'));
+  const arr = data.filter((key) => key.url.startsWith('https'));
 
   ll(arr);
 }
@@ -219,8 +215,6 @@ const data = [
 //   }
 // ]
 {
-  for (let key in data) {
-    data[key].gender === 'm' ? (data[key].is_male = true) : (data[key].is_male = false);
-    ll(data);
-  }
+  const arr = data.map((key) => (key.is_male = key.gender === 'm'));
+  ll(data);
 }

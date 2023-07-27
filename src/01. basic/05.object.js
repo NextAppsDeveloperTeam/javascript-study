@@ -39,5 +39,6 @@ const ll = console.log;
 {
   const obj = { n1: 323, n2: 553, n3: 234, n4: 553, n5: 952 };
 
+  ll(Object.keys(obj).reduce((res, key) => res + obj[key], 0));
   ll(Object.values(obj).reduce((a, b) => a + b));
 }

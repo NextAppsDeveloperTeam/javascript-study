@@ -44,8 +44,8 @@ const ll = console.log;
 
   for (const i of arr) {
     sum += i;
-    minNum = Math.min(...arr); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-    maxNum = Math.max(...arr); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    minNum = Math.min(minNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    maxNum = Math.max(maxNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
   }
   ll(sum, minNum, maxNum);
 }
@@ -67,8 +67,8 @@ const ll = console.log;
   let maxNum = arr[0];
   let minNum = arr[0];
   arr.forEach((num) => {
-    minNum = Math.min(...arr); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-    maxNum = Math.max(...arr); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    minNum = Math.min(minNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+    maxNum = Math.max(maxNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
   });
   ll(minNum, maxNum);
 }
