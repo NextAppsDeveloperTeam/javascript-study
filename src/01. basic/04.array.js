@@ -33,22 +33,22 @@ const ll = console.log;
 //   ll(maxNum, minNum);
 // }
 
-// TODO: for/of 이용하여 합계, 최대값, 최소값 찾기
-{
-  // const arr = [3, 6, 2, 1, 4, 5];
-  const arr = [300, 200, 100, 400, 500, 100];
-
-  let sum = 0;
-  let maxNum = arr[0];
-  let minNum = arr[0];
-
-  for (const i of arr) {
-    sum += i;
-    minNum = Math.min(minNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-    maxNum = Math.max(maxNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-  }
-  ll(sum, minNum, maxNum);
-}
+// for/of 이용하여 합계, 최대값, 최소값 찾기
+// {
+//   // const arr = [3, 6, 2, 1, 4, 5];
+//   const arr = [300, 200, 100, 400, 500, 100];
+//
+//   let sum = 0;
+//   let maxNum = arr[0];
+//   let minNum = arr[0];
+//
+//   for (const i of arr) {
+//     sum += i;
+//     minNum = Math.min(minNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+//     maxNum = Math.max(maxNum, i); // !!! 이렇게 사용하면 for of 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+//   }
+//   ll(sum, minNum, maxNum);
+// }
 
 // Array.forEach 이용하여 합계 계산
 // {
@@ -60,18 +60,18 @@ const ll = console.log;
 //   ll(sum);
 // }
 
-// TODO: Array.forEach 이용하여 최소값, 최소값 찾기
-{
-  const arr = [3, 6, 2, 1, 4, 5];
-
-  let maxNum = arr[0];
-  let minNum = arr[0];
-  arr.forEach((num) => {
-    minNum = Math.min(minNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-    maxNum = Math.max(maxNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
-  });
-  ll(minNum, maxNum);
-}
+// Array.forEach 이용하여 최소값, 최소값 찾기
+// {
+//   const arr = [3, 6, 2, 1, 4, 5];
+//
+//   let maxNum = arr[0];
+//   let minNum = arr[0];
+//   arr.forEach((num) => {
+//     minNum = Math.min(minNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+//     maxNum = Math.max(maxNum, num); // !!! 이렇게 사용하면 forEach 안에 있을 필요가 없음. Spread Operator 사용하지 말고 해결.
+//   });
+//   ll(minNum, maxNum);
+// }
 
 // // Array.find 이용하여 1 찾기
 // {

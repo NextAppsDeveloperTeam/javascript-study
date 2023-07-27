@@ -34,11 +34,10 @@ const ll = console.log;
 //   ll(Object.keys(obj));
 // }
 
-// TODO: 모든 value 값 합산. key 를 모른다고 가정해야함
-// !!! (1) Object.keys, Array.reduce 함수를 사용하여 한번에 처리
-{
-  const obj = { n1: 323, n2: 553, n3: 234, n4: 553, n5: 952 };
-
-  ll(Object.keys(obj).reduce((res, key) => res + obj[key], 0));
-  ll(Object.values(obj).reduce((a, b) => a + b));
-}
+// 모든 value 값 합산. key 를 모른다고 가정해야함
+// {
+//   const obj = { n1: 323, n2: 553, n3: 234, n4: 553, n5: 952 };
+//
+//   ll(Object.keys(obj).reduce((res, key) => res + obj[key], 0));
+//   ll(Object.values(obj).reduce((a, b) => a + b));
+// }
